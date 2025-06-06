@@ -1,0 +1,34 @@
+body{
+    overflow:hidden; /*tout ce qui dépasse du body tu l'enleve*/
+    min-height:100vh;
+    cursor:crosshair;
+    
+}
+/* injecté une class bubble (ds js:bubble.classList.add */
+.bubble{
+    position:absolute;
+    border-radius: 300px;
+    background: rgba(255,166,0,0.6);
+    opacity: 0;
+    /* forwards = ne sort pas de l'écran */
+    animation :anim 8s forwards;
+    /* pour le changement de couleur */
+    filter:hue-rotate(0deg)
+}
+
+@keyframes anim {
+    to{
+        top:-250px;
+        /* pour changer la direction ,on injecte une variable left */
+        left : var(--left);
+        opacity: 1;
+        filter:hue-rotate(720deg)
+    }
+}
+
+h3{
+    font-size: 10rem ;
+    text-align: center; 
+    margin-top: 10px;
+    color: rgba(128,128,128,0.555);
+}
